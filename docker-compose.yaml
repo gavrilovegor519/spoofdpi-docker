@@ -1,0 +1,7 @@
+services:
+  spoofdpi:
+    build: .
+    container_name: "spoofdpi"
+    restart: "always"
+    ports:
+      - "8888:8080"
