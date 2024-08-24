@@ -3,6 +3,5 @@ WORKDIR /go
 RUN go install github.com/xvzc/SpoofDPI/cmd/spoof-dpi@latest
 
 FROM gcr.io/distroless/static-debian12
-WORKDIR /
-COPY --from=builder /go/bin/spoof-dpi .
-CMD ["./spoof-dpi", "-addr", "0.0.0.0", "-enable-doh", "-no-banner", "-window-size", "0", "-timeout", "10000"]
+COPY --from=builder /go/bin/spoof-dpi /
+CMD ["/spoof-dpi", "-addr", "0.0.0.0", "-enable-doh", "-no-banner", "-window-size", "0", "-timeout", "10000"]
