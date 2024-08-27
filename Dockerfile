@@ -1,4 +1,4 @@
-FROM golang:alpine as builder
+FROM golang:alpine AS builder
 WORKDIR /go
 RUN go install github.com/xvzc/SpoofDPI/cmd/spoofdpi@latest
 
