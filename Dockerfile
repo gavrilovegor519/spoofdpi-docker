@@ -1,6 +1,6 @@
 FROM golang:alpine AS builder
 WORKDIR /go
-RUN go install github.com/xvzc/SpoofDPI/cmd/spoofdpi@0.10.12
+RUN go install github.com/xvzc/SpoofDPI/cmd/spoofdpi@latest
 
 FROM gcr.io/distroless/static-debian12
 COPY --from=builder /go/bin/spoofdpi /
